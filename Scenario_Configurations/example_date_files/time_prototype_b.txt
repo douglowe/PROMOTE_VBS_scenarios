@@ -1,0 +1,23 @@
+#
+#  Prototype Time Settings for PROMOTE model runs
+#
+
+# year / month to use for emissions
+EMISS_YEAR="2015"
+EMISS_MONTH="07"
+
+# year / month / day start and end times
+ST_YEAR="2018"
+ST_MONTH="04"
+ST_DAY="22"
+
+END_YEAR="2018"
+END_MONTH="04"
+END_DAY="26"
+
+# define if this leg is an initial leg, or a restart leg
+RESTART=".true."
+
+
+
+
