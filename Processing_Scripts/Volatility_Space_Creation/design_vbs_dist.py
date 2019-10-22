@@ -17,10 +17,11 @@ Doug Lowe (27/11/2018)
 import numpy as np
 import matplotlib.pyplot as plt
 import math
-
+import jit from numba
 
 #%% functions for partitioning the mass, and returning a scaling factor
 
+@jit()
 def partition_mass(mass_dist,volatility_dist):
     
     condensed_fraction = np.ones(shape=(1,9))
@@ -59,7 +60,7 @@ def partition_mass(mass_dist,volatility_dist):
     return condensed_mass_dist, condensed_fraction
 
 
-
+@jit()
 def scale_factor_calc(mass_dist_orig,volatility_dist):
     
     scale_factor = 1.0
