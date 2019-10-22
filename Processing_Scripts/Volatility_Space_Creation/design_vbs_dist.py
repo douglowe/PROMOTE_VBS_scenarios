@@ -14,10 +14,16 @@ array.
 Doug Lowe (27/11/2018)
 """
 
+#%%
+import appnope
+appnope.nope()
+
+#%%
+
 import numpy as np
 import matplotlib.pyplot as plt
 import math
-import jit from numba
+from numba import jit
 
 #%% functions for partitioning the mass, and returning a scaling factor
 
