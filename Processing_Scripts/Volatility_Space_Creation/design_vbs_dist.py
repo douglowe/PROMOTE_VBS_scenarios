@@ -186,7 +186,33 @@ def plot_section(ax,point):
     #ax.set_title(pos_temp[point])
     label_text = 'age = '+str(pos_temp[point])+', scale = '+str(round(scale_fac[pos[point]],3))
     ax.text(-2, 0.7, label_text, fontsize=12)
-  
+
+
+#%% function for finding the VBS fractional distribution for a given "age"
+    
+def vbs_frac_dist_at_age(age,vbs_array):
+    
+    position = age * vbs_array.shape[0]
+    pos_int = np.int64(np.round(position))
+    
+    return(vbs_array[pos_int][:])
+
+
+#%% example distributions for stuff
+#
+#  a: minimum mass
+#  b: maximum mass
+#  c: High O:C ratios
+#
+
+case_a = vbs_frac_dist_at_age(0.1,vbs_store)
+
+case_b = ( vbs_frac_dist_at_age(0.1,vbs_store) + ivoc_mass[0][:] ) * 3.0
+
+case_c = vbs_frac_dist_at_age(0.05,vbs_store) * 3.0
+
+
+
 #%% plot distributions across the whole time frame
 
 fig, axes = plt.subplots(6, 1, sharex='all', sharey='all')
