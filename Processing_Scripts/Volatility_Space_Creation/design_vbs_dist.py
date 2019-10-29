@@ -198,6 +198,22 @@ def vbs_frac_dist_at_age(age,vbs_array):
     return(vbs_array[pos_int][:])
 
 
+#%% function for prettifing the VBS fractional list
+
+def vbs_list_pretty(vbs_list):
+    
+    pos = 1
+    for val in vbs_list:    
+        print('AN_VBS_FRAC%d="%6.4f"'%(pos,val))
+        pos += 1
+
+    pos = 1
+    for val in vbs_list:    
+        print('BB_VBS_FRAC%d="%6.4f"'%(pos,val))
+        pos += 1
+
+
+
 #%% example distributions for stuff
 #
 #  a: minimum mass
