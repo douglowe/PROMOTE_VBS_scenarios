@@ -20,6 +20,7 @@ appnope.nope()
 
 #%%
 
+import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import math
@@ -130,7 +131,7 @@ vbs_mass[0][6] = 1.0
 vbs_store = np.copy(vbs_mass)
 
 ## initialise the ageing rate and counter information
-age_rate = 0.01
+age_rate = 0.001
 age_counter = 0
 
 ## determine the initial partitioning of our vbs mass
@@ -165,7 +166,22 @@ while True:
         print("Scaling factor is: ",scale_temp)
         print("condensed fraction is:",condensed_fraction)
         
-        
+
+#%% store the vbs_store data as a file, converting to pandas dataframe first
+
+vbs_dataframe = pd.DataFrame(vbs_store, \
+                             columns=['Frac_1','Frac_2','Frac_3','Frac_4','Frac_5','Frac_6','Frac_7','Frac_8','Frac_9'])
+
+
+vbs_dataframe.insert(0,'Age',0)
+for iii in vbs_dataframe.index:
+    vbs_dataframe.iloc[iii,0] = iii / len(vbs_dataframe.index)
+
+# write out only the data which spans our distributions of interest
+vbs_dataframe = vbs_dataframe.set_index('Age')
+vbs_dataframe.loc[0.049:0.501].to_csv('vbs_age_data.csv',float_format="%.6e")
+
+
 #%% create IVOC distribution
 ivoc_mass = np.zeros(shape=(1,9))
 
