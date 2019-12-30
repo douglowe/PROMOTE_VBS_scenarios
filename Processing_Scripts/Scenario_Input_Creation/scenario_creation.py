@@ -149,7 +149,7 @@ def create_scenario_setup(inputs,vbsage):
 def create_vbs_dist(vstring,inputs,vbsage):
     
     # create key list for specified VBS scheme (BB or ANTH)
-    vbs_ids = list(vbsage.columns)
+    vbs_ids = ['Frac_1','Frac_2','Frac_3','Frac_4','Frac_5','Frac_6','Frac_7','Frac_8','Frac_9']
     vbs_dist_ids = [ii.replace('Frac_',vstring+'_VBS_FR') for ii in vbs_ids]
     
     # initialise the IVOC base values
@@ -174,7 +174,7 @@ def create_vbs_dist(vstring,inputs,vbsage):
     # populate the extra dictionary with fractional distribution    
     vdict_extra = {}    
     for pos in range(len(vbs_ids)):
-        svoc_value = vbsage.iloc[vbs_pos][vbs_ids[pos]] * svoc_scale
+        svoc_value = vbsage.iloc[vbs_pos][vbs_ids[pos]] * svoc_scale * vbsage.iloc[vbs_pos]['Scale']
         ivoc_value = ivoc_base[vbs_ids[pos]] * ivoc_scale
         vdict_extra[vbs_dist_ids[pos]] = svoc_value + ivoc_value
         

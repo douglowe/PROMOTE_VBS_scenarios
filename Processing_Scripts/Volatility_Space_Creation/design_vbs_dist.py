@@ -177,6 +177,8 @@ vbs_dataframe.insert(0,'Age',0)
 for iii in vbs_dataframe.index:
     vbs_dataframe.iloc[iii,0] = iii / len(vbs_dataframe.index)
 
+vbs_dataframe.insert(10,'Scale',scale_fac)
+
 # write out only the data which spans our distributions of interest
 vbs_dataframe = vbs_dataframe.set_index('Age')
 vbs_dataframe.loc[0.049:0.501].to_csv('vbs_age_data.csv',float_format="%.6e")
