@@ -1,0 +1,38 @@
+#
+#  Prototype Settings for PROMOTE model runs
+# 
+# Minimum mass 
+#
+#
+
+
+# chemical settings for namelist.input file
+
+BB_VBS_SCALE="1.0"
+AN_VBS_SCALE="1.0"
+BB_VBS_AGERATE="1.0e-13"
+AN_VBS_AGERATE="1.0e-13"
+BB_VBS_OXIDATE="0.075"
+AN_VBS_OXIDATE="0.075"
+
+BB_VBS_FRAC_1="0"
+BB_VBS_FRAC_2="0.12"
+BB_VBS_FRAC_3="0.24"
+BB_VBS_FRAC_4="0.24"
+BB_VBS_FRAC_5="0.21"
+BB_VBS_FRAC_6="0.13"
+BB_VBS_FRAC_7="0.04"
+BB_VBS_FRAC_8="0"
+BB_VBS_FRAC_9="0"
+
+AN_VBS_FRAC_1="0"
+AN_VBS_FRAC_2="0.12"
+AN_VBS_FRAC_3="0.24"
+AN_VBS_FRAC_4="0.24"
+AN_VBS_FRAC_5="0.21"
+AN_VBS_FRAC_6="0.13"
+AN_VBS_FRAC_7="0.04"
+AN_VBS_FRAC_8="0"
+AN_VBS_FRAC_9="0"
+
+
