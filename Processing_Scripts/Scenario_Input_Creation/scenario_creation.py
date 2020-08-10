@@ -174,7 +174,7 @@ def create_vbs_dist(vstring,inputs,vbsage):
     # populate the extra dictionary with fractional distribution    
     vdict_extra = {}    
     for pos in range(len(vbs_ids)):
-        svoc_value = vbsage.iloc[vbs_pos][vbs_ids[pos]] * svoc_scale * vbsage.iloc[vbs_pos]['Scale']
+        svoc_value = vbsage.iloc[vbs_pos][vbs_ids[pos]] * svoc_scale # * vbsage.iloc[vbs_pos]['Scale']
         ivoc_value = ivoc_base[vbs_ids[pos]] * ivoc_scale
         vdict_extra[vbs_dist_ids[pos]] = svoc_value + ivoc_value
         
