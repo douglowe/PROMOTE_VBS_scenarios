@@ -202,7 +202,8 @@ def plot_section(ax,point):
     ax.bar(x_range,ivoc_mass[0][:],bottom=vbs_store[pos[point]][:]) # add the IVOC
     ax.set_ylim(0,0.9)    
     #ax.set_title(pos_temp[point])
-    label_text = 'age = '+str(pos_temp[point])+', scale = '+str(round(scale_fac[pos[point]],3))
+    #label_text = 'age = '+str(pos_temp[point])+', scale = '+str(round(scale_fac[pos[point]],3))
+    label_text = 'age = '+str(pos_temp[point])
     ax.text(-2, 0.7, label_text, fontsize=12)
 
 
@@ -282,7 +283,7 @@ fig.set_size_inches(5.5, 8.5)
 #pos_temp = np.arange(0,0.9,0.1)
 
 #pos_temp = np.array([0.2,0.3,0.4,0.5,0.6,0.7])
-pos_temp = np.array([0.05,0.08,0.1,0.15,0.2,0.5])
+pos_temp = np.array([0.05,0.08,0.1,0.15,0.2,0.4])
 pos_temp2 = pos_temp * vbs_store.shape[0]
 pos = pos_temp2.astype('int64')
 
@@ -295,7 +296,7 @@ plot_section(axes[3],3)
 plot_section(axes[4],4)
 plot_section(axes[5],5)
 
-axes[3].set_ylabel('mass (dimensionless)')
+axes[3].set_ylabel('mass (dimensionless fraction)')
 axes[5].set_xlabel('log10(C*)')
 
 
